@@ -17,7 +17,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: var(--bg-primary);
+    background: url('MEDIA/background_1920.jpg') center center / cover no-repeat fixed, var(--bg-primary);
     color: var(--text-light);
     line-height: 1.5;
     overflow-x: hidden;
@@ -32,7 +32,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: var(--bg-primary);
+    background: rgba(0, 0, 0, 0.3);
     padding: 4rem 0 2rem;
 }
 
@@ -106,7 +106,7 @@ body {
 
 /* Features Section */
 .features {
-    background: var(--bg-primary);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .section-title {
@@ -123,12 +123,12 @@ body {
 }
 
 .feature-item {
-    background: var(--bg-primary);
+    background: rgba(0, 0, 0, 0.2);
     padding: 3rem 0;
 }
 
 .feature-item:nth-child(even) {
-    background: var(--bg-secondary);
+    background: rgba(0, 0, 0, 0.4);
     margin: 0 -2rem;
     padding: 4rem 2rem;
     border-radius: 0;
@@ -168,7 +168,7 @@ body {
 
 /* CTA Section */
 .cta {
-    background: var(--bg-primary);
+    background: rgba(0, 0, 0, 0.3);
     padding: 4rem 0;
     text-align: center;
 }
@@ -188,10 +188,10 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--bg-primary);
+    background: rgba(0, 0, 0, 0.5);
     padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid #222;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer p {
