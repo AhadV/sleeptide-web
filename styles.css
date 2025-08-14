@@ -1,11 +1,10 @@
 /* CSS Variables */
 :root {
     --bg-primary: #000000;
-    --bg-secondary: #111111;
     --text-light: #ffffff;
     --text-muted: #888888;
-    --moon-yellow: #f4d03f;
     --accent-yellow: #ffd700;
+    --spacing: 0.75rem;
 }
 
 /* Reset and Base Styles */
@@ -23,28 +22,37 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+}
+
+.inner {
+    width: 50rem;
+    max-width: 100%;
+    padding: 3rem;
     text-align: center;
-}
-
-/* Hero Section */
-.hero {
     background: rgba(0, 0, 0, 0.3);
-    padding: 4rem 0 2rem;
+    border-radius: 0;
 }
 
-.hero-content {
-    margin-bottom: 3rem;
-}
-
-.hero-title {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+/* Typography */
+h1 {
+    font-size: 2.5em;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
     color: var(--text-light);
 }
 
@@ -52,236 +60,214 @@ body {
     color: var(--accent-yellow);
 }
 
-.hero-subtitle {
+.subtitle {
     font-size: 1.75em;
     color: var(--text-muted);
-    margin-bottom: 3rem;
+    margin-bottom: calc(var(--spacing) * 4);
     line-height: 1.5;
 }
 
-.app-store-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing) * 2);
+    color: var(--accent-yellow);
 }
 
-.app-store-link {
-    display: inline-block;
-    background: var(--text-light);
-    padding: 1rem 3rem;
-    border-radius: 1.375rem;
-    color: var(--bg-primary);
-    text-decoration: none;
+h3 {
+    font-size: 1.5em;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: background-color 0.2s ease;
-    width: 22rem;
-    height: 5rem;
+    margin-bottom: var(--spacing);
+    color: var(--accent-yellow);
+}
+
+p {
+    font-size: 1em;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 4);
+}
+
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 22rem;
+    height: 5rem;
+    background: var(--text-light);
+    color: var(--bg-primary);
+    text-decoration: none;
+    border-radius: 1.375rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
 }
 
-.app-store-link:hover {
+.button:hover {
     background: var(--text-muted);
 }
 
-.app-store-badge {
+.button img {
     height: 50px;
     width: auto;
 }
 
-.hero-phone {
-    text-align: center;
-    margin-bottom: 4rem;
+/* Images */
+.image {
+    margin-bottom: calc(var(--spacing) * 4);
 }
 
-.phone-image {
-    max-width: 500px;
-    width: 100%;
+.image img {
+    width: 15rem;
+    max-width: 100%;
     height: auto;
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
-}
-
-/* Features Section */
-.features {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.section-title {
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 4rem;
-    color: var(--accent-yellow);
-}
-
-.feature-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-}
-
-.feature-item {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 3rem 0;
-}
-
-.feature-item:nth-child(even) {
-    background: rgba(0, 0, 0, 0.4);
-    margin: 0 -2rem;
-    padding: 4rem 2rem;
-    border-radius: 0;
-}
-
-.feature-image {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.feature-image img {
-    max-width: 450px;
-    width: 95%;
-    height: auto;
-    border-radius: 25px;
+    border-radius: 2.5rem;
     box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
 }
 
-.feature-content {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+/* Sections */
+.section {
+    margin-bottom: calc(var(--spacing) * 6);
 }
 
-.feature-content h3 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--accent-yellow);
+.section:nth-child(even) {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 -3rem calc(var(--spacing) * 6) -3rem;
+    padding: calc(var(--spacing) * 4) 3rem;
 }
 
-.feature-content p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: var(--text-muted);
-    line-height: 1.6;
+/* Contact and Social */
+.contact-social {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 4);
 }
 
-/* CTA Section */
-.cta {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 4rem 0;
-    text-align: center;
+.social-icons {
+    display: flex;
+    gap: calc(var(--spacing) * 2);
+    justify-content: center;
 }
 
-.cta-content h2 {
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--accent-yellow);
+.social-icon {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--bg-primary);
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease;
 }
 
-.cta-content p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
+.social-icon:hover {
+    background: var(--accent-yellow);
 }
 
 /* Footer */
-.footer {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2rem 0;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer p {
-    color: var(--text-muted);
+.footer-text {
     font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: calc(var(--spacing) * 4);
 }
 
-.footer a {
+.footer-text a {
     color: var(--accent-yellow);
     text-decoration: none;
 }
 
-.footer a:hover {
+.footer-text a:hover {
     text-decoration: underline;
-}
-
-/* Remove all animations */
-*, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-}
-
-/* Add back only essential transitions */
-.app-store-link {
-    transition: background-color 0.2s ease !important;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .container {
+    .inner {
+        width: 100%;
         padding: 2rem 1rem;
     }
     
-    .hero {
-        padding: 2rem 0 1rem;
+    h1 {
+        font-size: 2rem;
     }
     
-    .phone-image {
-        max-width: 400px;
+    .subtitle {
+        font-size: 1.2em;
     }
     
-    .app-store-link {
+    .button {
         width: 18rem;
         height: 4rem;
         font-size: 1rem;
     }
     
-    .app-store-badge {
-        height: 40px;
+    .image img {
+        width: 12rem;
     }
     
-    .feature-image img {
-        max-width: 380px;
-    }
-    
-    .feature-item:nth-child(even) {
-        margin: 0 -1rem;
-        padding: 3rem 1rem;
-    }
-    
-    .feature-grid {
-        gap: 4rem;
+    .section:nth-child(even) {
+        margin: 0 -1rem calc(var(--spacing) * 6) -1rem;
+        padding: calc(var(--spacing) * 3) 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
+    .inner {
         padding: 1.5rem 1rem;
     }
     
-    .phone-image {
-        max-width: 350px;
+    h1 {
+        font-size: 1.8rem;
     }
     
-    .app-store-link {
+    .subtitle {
+        font-size: 1.1em;
+    }
+    
+    .button {
         width: 16rem;
         height: 3.5rem;
         font-size: 0.9rem;
-        padding: 0.8rem 2rem;
     }
     
-    .app-store-badge {
-        height: 35px;
+    .image img {
+        width: 10rem;
     }
     
-    .feature-image img {
-        max-width: 340px;
+    .buttons {
+        flex-direction: column;
     }
     
-    .hero-subtitle {
-        font-size: 1.2em;
+    .social-icons {
+        flex-wrap: wrap;
     }
+}
+
+/* Remove all animations */
+*, *::before, *::after {
+    animation: none !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.button {
+    transition: background-color 0.2s ease !important;
+}
+
+.social-icon {
+    transition: background-color 0.2s ease !important;
 }
