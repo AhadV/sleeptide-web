@@ -3,134 +3,603 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>SleepTide - Better Sleep Tonight</title>
-    <meta name="description" content="Transform your sleep with SleepTide. AI-powered sleep analysis, soothing sounds, smart alarms, and personalized insights for better rest.">
-    <meta name="keywords" content="sleep app, sleep sounds, smart alarm, sleep tracker, AI sleep analysis">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="SleepTide - Better Sleep Tonight">
-    <meta property="og:description" content="Transform your sleep with AI-powered insights and soothing sounds.">
-    <meta property="og:image" content="https://sleeptide.app/MEDIA/01.png">
-    <meta property="og:url" content="https://sleeptide.app">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "SleepTide",
-        "description": "AI-powered sleep tracking and improvement app",
-        "url": "https://sleeptide.app",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "iOS"
-    }
-    </script>
+    <title>SleepTide - The Sleep Tracker That Actually Fixes Your Sleep</title>
+    <meta name="description" content="Stop waking up exhausted. SleepTide uses advanced AI to track, analyze, and improve your sleep quality.">
+    <link rel="icon" type="image/jpeg" href="MEDIA/final.jpg">
+    <link rel="apple-touch-icon" href="MEDIA/final.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .background-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('MEDIA/background_ocean.jpg') center/cover no-repeat;
+        }
+
+        .background-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .app-store-badge img {
+            height: 60px;
+            width: auto;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            gap: 100px;
+        }
+
+        .feature-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-item:nth-child(even) .feature-content {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4fc3f7;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .feature-image img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .problem-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 30px;
+        }
+
+        .problem-section p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #4fc3f7;
+            font-weight: 600;
+        }
+
+        /* Screenshot Gallery */
+        .gallery {
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Preview */
+        .faq-preview {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .faq-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-card h4 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .faq-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .faq-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #4fc3f7;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .faq-link:hover {
+            color: #29b6f6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.1) 0%, rgba(41, 182, 246, 0.05) 100%);
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #4fc3f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4fc3f7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #4fc3f7;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image img {
+                transform: none;
+                max-width: 280px;
+            }
+
+            .feature-item,
+            .feature-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .feature-image {
+                order: -1;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="background-wrapper"></div>
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
+        <div class="container">
             <div class="hero-content">
-                <h1>Better Sleep<br>Starts Tonight</h1>
-                <p>Transform your nights with AI-powered sleep insights, soothing soundscapes, and smart wake-up technology designed for deep, restorative rest.</p>
-                
-                <div>
-                    <a href="https://sleepwell.app" class="download-btn">
-                        <img src="MEDIA/AppStoreWht.svg" alt="App Store">
-                        Download for iOS
-                    </a>
-                    <a href="mailto:support@sleeptide.app" class="contact-btn">
-                        📧 Get Support
+                <div class="hero-text">
+                    <h1>Stop waking up exhausted.</h1>
+                    <p>The only sleep tracker that actually improves your sleep, not just monitors it.</p>
+                    <a href="https://sleeptide.app" class="app-store-badge">
+                        <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store">
                     </a>
                 </div>
+                <div class="hero-image">
+                    <img src="MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.30.21-portrait.png" alt="SleepTide App Screenshot">
+                </div>
             </div>
-            
-            <div class="hero-phone">
-                <img src="MEDIA/01.png" alt="SleepTide App">
-            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>Most sleep apps are useless.</h2>
+            <p>They give you pretty graphs but leave you exhausted.</p>
+            <p>You've tried white noise, sleep sounds, meditation, and gadgets. <span class="highlight">Nothing works.</span></p>
+            <p><strong>SleepTide is different.</strong> Our technology analyzes millions of sleep patterns to find what's actually keeping YOU awake — then fixes it.</p>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="features-container">
-            <h2>Everything You Need for Perfect Sleep</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <img src="MEDIA/02.png" alt="Sleep Sounds">
-                    <h3>Soothing Soundscapes</h3>
-                    <p>Curated library of sleep sounds, white noise, nature sounds, and ASMR designed to help you drift off peacefully.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Solutions, Not Just Data</h2>
+                <p>Advanced AI that learns your sleep patterns and actively improves them</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h3>Sleep Events Detection</h3>
+                        <p>Automatically detects and analyzes every sleep disruption, from snoring to restless movements. Know exactly what's breaking your sleep cycles.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="MEDIA/IMG_2280-portrait.png" alt="Sleep Events">
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <img src="MEDIA/03.png" alt="Smart Alarm">
-                    <h3>Smart Wake Technology</h3>
-                    <p>Wake up at the optimal point in your sleep cycle for refreshed, natural mornings that feel effortless.</p>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h3>Intelligent Dashboard</h3>
+                        <p>Your personal sleep command center. Track trends, identify patterns, and see your progress with intuitive visualizations.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.30.39-portrait.png" alt="Dashboard">
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <img src="MEDIA/04.png" alt="Sleep Analysis">
-                    <h3>AI Sleep Insights</h3>
-                    <p>Advanced analysis of your sleep patterns with personalized recommendations to improve your rest quality.</p>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h3>SoundIQ AI Analysis</h3>
+                        <p>Our AI analyzes millions of sleep sounds to understand your unique patterns. Get personalized insights that actually improve your sleep.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="MEDIA/IMG_2278-portrait.png" alt="SoundIQ AI">
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <img src="MEDIA/05.png" alt="Dream Journal">
-                    <h3>Dream Tracking</h3>
-                    <p>Record and analyze your dreams to discover patterns and gain deeper insights into your sleep journey.</p>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h3>Advanced Snore Tracking</h3>
+                        <p>Not just detection — real solutions. Understand your snoring patterns and get actionable advice to reduce them.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.25.01-portrait.png" alt="Snore Tracking">
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <img src="MEDIA/06.png" alt="Sleep Environment">
-                    <h3>Environment Optimization</h3>
-                    <p>Monitor and optimize your bedroom conditions for the perfect sleep environment every night.</p>
+
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <h3>Adaptive Sleep Sounds</h3>
+                        <p>Scientifically designed soundscapes that adapt to your sleep stage. Fall asleep faster and stay asleep longer.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.30.58-left.png" alt="Sleep Sounds">
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need for Better Sleep</h2>
+                <p>Comprehensive tools designed to transform your nights</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="MEDIA/IMG_2279-left.png" alt="Sleep Analysis">
+                </div>
+                <div class="gallery-item">
+                    <img src="MEDIA/IMG_2281-left.png" alt="Event Detection">
+                </div>
+                <div class="gallery-item">
+                    <img src="MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.24.51-left.png" alt="White Noise">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="faq-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Questions? We've Got Answers</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>How does SleepTide track my sleep?</h4>
+                    <p>Using advanced AI and your device's sensors to detect breathing patterns, movement, and sleep sounds with clinical-grade accuracy.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is my sleep data private?</h4>
+                    <p>Absolutely. Your data is encrypted end-to-end and never shared with third parties. You control your data completely.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>What makes your AI different?</h4>
+                    <p>Trained on millions of real sleep patterns from users worldwide, providing hyper-personalized insights others miss.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="faq.html" class="faq-link">View All FAQs →</a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta">
-        <div class="cta-container">
-            <h2>Ready for Better Sleep?</h2>
-            <p>Join thousands who have transformed their nights with SleepTide's intelligent sleep technology.</p>
-            
-            <a href="https://sleepwell.app" class="download-btn">
-                <img src="MEDIA/AppStoreWht.svg" alt="App Store">
-                Download Now
+        <div class="container">
+            <h2>Stop hitting snooze 8 times</h2>
+            <p>Join thousands who are finally getting the sleep they deserve</p>
+            <a href="https://sleeptide.app" class="app-store-badge">
+                <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store">
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="social-links">
-                <a href="https://facebook.com/sleeptide" class="social-link">📘</a>
-                <a href="https://instagram.com/sleeptide" class="social-link">📷</a>
-                <a href="https://tiktok.com/@sleeptide" class="social-link">🎵</a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SleepTide</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 20px;">The sleep tracker that actually fixes your sleep.</p>
+                    <a href="https://sleeptide.app" style="display: inline-block;">
+                        <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store" style="height: 40px;">
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="faq.html">FAQ</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="mailto:support@sleeptide.app" class="social-link" title="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-10 5L2 7"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@sleeptide_?" class="social-link" title="TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1JxtC8qjoq/?mibextid=wwXIfr" class="social-link" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1JxtC8qjoq/?mibextid=wwXIfr" class="social-link" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="footer-links">
-                <a href="faq.html">FAQ</a>
-                <a href="https://rgcos.com">RGCOS</a>
-            </div>
-            
-            <div class="footer-text">
-                © 2025 SleepTide. Sweet dreams await.
+            <div class="footer-bottom">
+                <p>© 2025 SleepTide. All rights reserved.</p>
+                <p>Made with 💙 by <a href="https://rgcos.com" target="_blank">RGCOS</a></p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

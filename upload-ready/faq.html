@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>FAQ - SleepTide | Frequently Asked Questions</title>
+    <meta name="description" content="Get answers to frequently asked questions about SleepTide sleep app, AI analysis, privacy, sleep tracking, and more. Everything you need to know.">
+    <meta name="keywords" content="sleep app faq, sleeptide questions, sleep tracking help, ai sleep analysis, sleep app support, sleep tracker questions">
+    <meta name="author" content="SleepTide">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sleeptide.app/faq.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sleeptide.app/faq.html">
+    <meta property="og:title" content="FAQ - SleepTide | Frequently Asked Questions">
+    <meta property="og:description" content="Get answers to frequently asked questions about SleepTide sleep app, AI analysis, privacy, sleep tracking, and more.">
+    <meta property="og:image" content="https://sleeptide.app/MEDIA/Simulator Screenshot - iPhone 16 Pro Max - 2025-08-13 at 20.30.21-portrait.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://sleeptide.app/faq.html">
+    <meta property="twitter:title" content="FAQ - SleepTide | Frequently Asked Questions">
+    <meta property="twitter:description" content="Get answers to frequently asked questions about SleepTide sleep app, AI analysis, privacy, sleep tracking, and more.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="MEDIA/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="MEDIA/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="MEDIA/apple-touch-icon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .background-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('MEDIA/background_ocean.jpg') center/cover no-repeat;
+        }
+
+        .background-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        :root {
+            --accent-yellow: #4fc3f7;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --bg-primary: #000;
+            --text-light: #fff;
+        }
+
+        .faq-header {
+            text-align: center;
+            padding: 4rem 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #4fc3f7;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #29b6f6;
+        }
+        
+        .faq-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: background-color 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .faq-question h3 {
+            color: #4fc3f7;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            padding-right: 2rem;
+        }
+        
+        .faq-toggle {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4fc3f7;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.open {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+        
+        .faq-answer p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(244, 208, 63, 0.1);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .faq-header {
+                padding: 3rem 0;
+            }
+            
+            .faq-header h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .faq-header p {
+                font-size: 1.1rem !important;
+            }
+            
+            .faq-container {
+                padding: 1.5rem;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+                padding-right: 2.5rem;
+            }
+            
+            .faq-toggle {
+                right: 1rem;
+                font-size: 1.3rem;
+            }
+            
+            .faq-answer.open {
+                padding: 1rem;
+            }
+            
+            .back-link {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-header h1 {
+                font-size: 2rem !important;
+            }
+            
+            .faq-header p {
+                font-size: 1rem !important;
+            }
+            
+            .faq-container {
+                padding: 1rem;
+            }
+            
+            .faq-question {
+                padding: 0.8rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            
+            .faq-answer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .faq-question:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+            
+            .faq-card:hover {
+                transform: none;
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-wrapper"></div>
+    <div class="faq-header">
+        <div class="container">
+            <h1 style="color: #4fc3f7; font-size: 3rem; margin: 0; background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Frequently Asked Questions</h1>
+            <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.2rem; margin-top: 1rem;">Everything you need to know about SleepTide</p>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How does SleepTide track my sleep?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide uses your device's microphone to detect breathing patterns, movement, and sleep sounds. The app analyzes this data using advanced AI to provide insights about your sleep quality and patterns.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How does the sleep environment analysis work?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide automatically analyzes your bedroom environment using your device's sensors and microphone. It detects room temperature patterns, noise levels, air quality indicators, and lighting conditions to provide personalized recommendations for optimizing your sleep space.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>What makes SleepTide's AI different from other sleep apps?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our AI is trained on millions of real sleep patterns and sounds from users worldwide, not just generic sleep data. This massive dataset allows us to provide hyper-personalized insights and detect subtle patterns that other apps miss. We continuously improve our algorithms with every sleep session recorded.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How is your AI trained and what data does it use?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide's AI is trained on millions of anonymized sleep recordings, breathing patterns, and environmental data from users who opted in to help improve our technology. Our machine learning models analyze acoustic patterns, movement detection, and sleep phase transitions to provide accurate, personalized insights.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Is my sleep data private?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, your privacy is our top priority. All sleep recordings are processed locally on your device when possible. Cloud analysis is encrypted end-to-end and your data is never shared with third parties. You control your data and can delete it anytime.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Do I need to keep the app open all night?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No, SleepTide can run in the background. Simply start your sleep tracking and place your device on your nightstand. The app will automatically detect when you fall asleep and wake up.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How accurate is the sleep analysis?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide's AI analysis provides clinical-grade accuracy, validated against professional sleep studies. Our technology is continuously refined with real-world data from millions of users. However, for medical concerns, always consult with a healthcare professional.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Who built SleepTide and what's their experience?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide was built by an experienced team of developers, sleep researchers, and AI specialists with decades of combined experience in health technology. Our app represents hundreds of thousands of lines of carefully crafted code, developed with attention to detail and user experience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How often do you update the app?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>We release updates regularly - typically every 2-3 weeks with improvements, new features, and bug fixes. We're constantly working to enhance SleepTide based on user feedback and the latest sleep science research. You'll always have access to the most current version.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Do you really listen to customer feedback?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! User feedback is the driving force behind our development. We read every review, support message, and feature request. Many of our most popular features came directly from user suggestions. We believe our users know best what they need for better sleep.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>What kind of support can I expect?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>You'll get real human support from our dedicated team who genuinely care about your sleep journey. We typically respond within 24 hours, often much faster. Our support team includes sleep specialists who can provide personalized guidance beyond just technical help.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How much effort goes into developing SleepTide?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide represents hundreds of thousands of lines of meticulously written code, countless hours of testing, and continuous refinement. Every feature is carefully designed and tested to ensure it genuinely helps improve your sleep. We're passionate about creating the best sleep app possible.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Can I use SleepTide with multiple people?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide is designed for individual sleep tracking. For couples, we recommend each person use their own device for the most accurate results.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>How do you ensure the app stays current with sleep science?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our team constantly reviews the latest sleep research and collaborates with sleep specialists to integrate new findings into our app. We update our AI models and recommendations based on emerging sleep science to ensure you always get the most effective guidance.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>Why should I trust SleepTide over other sleep apps?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>SleepTide combines cutting-edge AI technology with genuine care for user experience. Unlike generic apps, we've invested in training our AI on millions of real sleep patterns, built hundreds of thousands of lines of quality code, and maintain a dedicated support team. We're constantly improving and always put our users first.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h3>What if I have technical issues?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can contact our support team through the app's settings. We have real people who care about solving your problems - not automated responses. We typically respond within 24 hours and work with you until the issue is completely resolved.</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div style="text-align: center; padding: 3rem 0; background: rgba(0, 0, 0, 0.3); border-radius: 15px; margin-top: 3rem;">
+            <h2 style="color: #4fc3f7; margin-bottom: 1rem;">Ready to Sleep Better?</h2>
+            <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">Download SleepTide and start your journey to better sleep tonight</p>
+            <a href="https://sleeptide.app" style="display: inline-block;">
+                <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store" style="height: 60px; width: auto;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: rgba(0, 0, 0, 0.8); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 80px;">
+        <div class="container">
+            <p style="color: rgba(255, 255, 255, 0.6);">&copy; 2025 SleepTide. All rights reserved.</p>
+            <p style="color: rgba(255, 255, 255, 0.6);">Made with 💙 by <a href="https://rgcos.com" style="color: #4fc3f7; text-decoration: none;" target="_blank">RGCOS</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('open');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current item
+            faqItem.classList.toggle('active');
+            answer.classList.toggle('open');
+            toggle.textContent = faqItem.classList.contains('active') ? '×' : '+';
+        }
+    </script>
+</body>
+</html>
