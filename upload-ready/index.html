@@ -40,6 +40,12 @@
     <link rel="icon" type="image/x-icon" href="MEDIA/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="MEDIA/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="MEDIA/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -48,11 +54,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #000;
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         .background-wrapper {
@@ -98,21 +106,26 @@
         }
 
         .hero-text h1 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .hero-text p {
-            font-size: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
             line-height: 1.6;
+            letter-spacing: -0.01em;
         }
 
         .app-store-badge {
@@ -136,7 +149,7 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 350px;
+            max-width: 420px;
             height: auto;
             border-radius: 30px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
@@ -154,19 +167,25 @@
         }
 
         .section-header h2 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.015em;
         }
 
         .section-header p {
-            font-size: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
             color: rgba(255, 255, 255, 0.7);
             max-width: 600px;
             margin: 0 auto;
+            letter-spacing: -0.005em;
         }
 
         .feature-grid {
@@ -190,20 +209,26 @@
         }
 
         .feature-content h3 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-size: 2rem;
+            font-weight: 600;
             margin-bottom: 20px;
             color: #4fc3f7;
+            letter-spacing: -0.01em;
         }
 
         .feature-content p {
-            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
+            letter-spacing: -0.005em;
         }
 
         .feature-image img {
             width: 100%;
-            max-width: 300px;
+            max-width: 360px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -217,16 +242,22 @@
         }
 
         .problem-section h2 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
             margin-bottom: 30px;
+            letter-spacing: -0.015em;
         }
 
         .problem-section p {
-            font-size: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
             max-width: 800px;
             margin: 0 auto 20px;
             line-height: 1.8;
+            letter-spacing: -0.005em;
         }
 
         .highlight {
@@ -241,17 +272,20 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
 
         .gallery-item img {
             width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            margin: 0 auto;
+            display: block;
         }
 
         .gallery-item:hover img {
@@ -285,9 +319,12 @@
         }
 
         .faq-card h4 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             color: #4fc3f7;
             margin-bottom: 15px;
             font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .faq-card p {
@@ -317,18 +354,24 @@
         }
 
         .cta h2 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
             margin-bottom: 30px;
             background: linear-gradient(135deg, #fff 0%, #4fc3f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .cta p {
-            font-size: 1.3rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 50px;
+            letter-spacing: -0.01em;
         }
 
         /* Footer */
@@ -346,9 +389,12 @@
         }
 
         .footer-section h3 {
+            font-family: 'Poppins', 'Inter', sans-serif;
             color: #4fc3f7;
             margin-bottom: 20px;
             font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .footer-section a {
@@ -365,23 +411,38 @@
 
         .social-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            justify-content: center;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
         }
 
         .social-link:hover {
             background: #4fc3f7;
-            transform: scale(1.1);
+            border-color: #4fc3f7;
+            transform: translateY(-2px);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(79, 195, 247, 0.3);
+        }
+        
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-bottom {
@@ -477,7 +538,7 @@
 
             .hero-image img {
                 transform: none;
-                max-width: 280px;
+                max-width: 336px;
                 margin: 0 auto;
             }
 
@@ -494,7 +555,7 @@
             }
             
             .feature-image img {
-                max-width: 250px;
+                max-width: 300px;
             }
             
             .feature-content h3 {
@@ -527,7 +588,7 @@
             }
             
             .gallery-item img {
-                max-width: 250px;
+                max-width: 300px;
                 margin: 0 auto;
                 display: block;
             }
@@ -586,15 +647,15 @@
             }
             
             .hero-image img {
-                max-width: 220px;
+                max-width: 264px;
             }
             
             .feature-image img {
-                max-width: 200px;
+                max-width: 240px;
             }
             
             .gallery-item img {
-                max-width: 200px;
+                max-width: 240px;
             }
             
             .section-header h2 {
@@ -804,7 +865,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Stop waking up exhausted.</h1>
-                    <p>The only sleep tracker that actually improves your sleep, not just monitors it.</p>
+                    <p>Track, understand, and fix your sleep — so every morning feels like a fresh start.</p>
                     <a href="https://sleeptide.app" class="app-store-badge">
                         <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store">
                     </a>
@@ -819,10 +880,10 @@
     <!-- Problem Section -->
     <section class="problem-section">
         <div class="container">
-            <h2>Most sleep apps are useless.</h2>
-            <p>They give you pretty graphs but leave you exhausted.</p>
-            <p>You've tried white noise, sleep sounds, meditation, and gadgets. <span class="highlight">Nothing works.</span></p>
-            <p><strong>SleepTide is different.</strong> Our technology analyzes millions of sleep patterns to find what's actually keeping YOU awake — then fixes it.</p>
+            <h2>Finally, sleep that works for you.</h2>
+            <p>Real solutions backed by advanced AI technology.</p>
+            <p>You deserve quality sleep. <span class="highlight">You deserve to wake up refreshed.</span></p>
+            <p><strong>SleepTide delivers.</strong> Our technology analyzes millions of sleep patterns to find what's keeping YOU awake — then helps you sleep better.</p>
         </div>
     </section>
 
@@ -938,8 +999,8 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Stop hitting snooze 8 times</h2>
-            <p>Join thousands who are finally getting the sleep they deserve</p>
+            <h2>Wake up refreshed tomorrow</h2>
+            <p>Join thousands who've transformed their sleep with SleepTide</p>
             <a href="https://sleeptide.app" class="app-store-badge">
                 <img src="MEDIA/AppStoreBlk.svg" alt="Download on the App Store">
             </a>
