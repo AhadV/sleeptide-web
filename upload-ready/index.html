@@ -107,10 +107,10 @@
 
         .hero-text h1 {
             font-family: 'Poppins', 'Inter', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -120,10 +120,10 @@
 
         .hero-text p {
             font-family: 'Inter', sans-serif;
-            font-size: 1.4rem;
+            font-size: clamp(1.4rem, 2vw, 2rem);
             font-weight: 500;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             line-height: 1.6;
             letter-spacing: -0.01em;
         }
@@ -149,7 +149,7 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 420px;
+            max-width: clamp(420px, 35vw, 600px);
             height: auto;
             border-radius: 30px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
@@ -168,9 +168,9 @@
 
         .section-header h2 {
             font-family: 'Poppins', 'Inter', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -180,10 +180,10 @@
 
         .section-header p {
             font-family: 'Inter', sans-serif;
-            font-size: 1.4rem;
+            font-size: clamp(1.4rem, 1.8vw, 1.8rem);
             font-weight: 400;
             color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             letter-spacing: -0.005em;
         }
@@ -210,16 +210,16 @@
 
         .feature-content h3 {
             font-family: 'Poppins', 'Inter', sans-serif;
-            font-size: 2rem;
+            font-size: clamp(2rem, 2.5vw, 2.8rem);
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #4fc3f7;
             letter-spacing: -0.01em;
         }
 
         .feature-content p {
             font-family: 'Inter', sans-serif;
-            font-size: 1.3rem;
+            font-size: clamp(1.3rem, 1.6vw, 1.7rem);
             font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
@@ -228,7 +228,7 @@
 
         .feature-image img {
             width: 100%;
-            max-width: 360px;
+            max-width: clamp(360px, 30vw, 500px);
             height: auto;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -455,15 +455,70 @@
         /* Large Desktop */
         @media (min-width: 1400px) {
             .container {
-                max-width: 1400px;
+                max-width: 1600px;
             }
             
             .hero-text h1 {
-                font-size: 4.5rem;
+                font-size: 7rem;
             }
             
             .hero-text p {
-                font-size: 1.4rem;
+                font-size: 2.2rem;
+            }
+            
+            .hero-image img {
+                max-width: 700px;
+            }
+            
+            .section-header h2 {
+                font-size: 5rem;
+            }
+            
+            .section-header p {
+                font-size: 2rem;
+            }
+            
+            .feature-content h3 {
+                font-size: 3.2rem;
+            }
+            
+            .feature-content p {
+                font-size: 1.9rem;
+            }
+            
+            .feature-image img {
+                max-width: 550px;
+            }
+        }
+
+        /* Extra Large Desktop */
+        @media (min-width: 1800px) {
+            .container {
+                max-width: 1800px;
+            }
+            
+            .hero-text h1 {
+                font-size: 8rem;
+            }
+            
+            .hero-text p {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image img {
+                max-width: 800px;
+            }
+            
+            .section-header h2 {
+                font-size: 5.5rem;
+            }
+            
+            .feature-content h3 {
+                font-size: 3.5rem;
+            }
+            
+            .feature-image img {
+                max-width: 600px;
             }
         }
 
