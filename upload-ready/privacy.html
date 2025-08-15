@@ -42,6 +42,41 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
         }
 
+        /* Mobile Background Image and Performance Optimizations */
+        @media (max-width: 768px), (hover: none) and (pointer: coarse) {
+            .background-wrapper {
+                background-image: url('MEDIA/background_ocean_mobile.jpg') !important;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: scroll !important; /* Disable parallax on mobile */
+                will-change: auto; /* Prevent unnecessary GPU layers */
+                transform: translateZ(0); /* Force hardware acceleration */
+                -webkit-transform: translateZ(0);
+                backface-visibility: hidden; /* Reduce repaints */
+                -webkit-backface-visibility: hidden;
+            }
+            
+            /* Simplify gradient overlay on mobile for better performance */
+            .background-wrapper::before {
+                background: rgba(0,0,0,0.7); /* Single color overlay instead of gradient */
+            }
+            
+            /* Optimize animations and transitions on mobile */
+            * {
+                -webkit-transform: translate3d(0,0,0); /* Force GPU acceleration */
+                -webkit-backface-visibility: hidden;
+                -webkit-perspective: 1000;
+            }
+            
+            /* Disable hover effects on mobile */
+            .back-link:hover,
+            footer a:hover {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
